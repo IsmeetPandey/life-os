@@ -1,8 +1,22 @@
 # Life OS 🧠
 
-A local-first personal feedback system for turning daily behavior into measurable, reviewable observations.
+> Turn daily behavior into measurable, reviewable observations.
 
-## Run locally
+Life OS is a **local-first personal feedback system** for logging daily activities and reviewing patterns without pretending that correlation proves causation.
+
+## Why it exists
+
+Most productivity tools collect numbers but make interpretation difficult. Life OS keeps the model simple: record what happened, validate the input, store it locally, and make the observations easy to review.
+
+## Current MVP
+
+- Local SQLite storage
+- Daily activity logging
+- Today-at-a-glance totals
+- Historical observation count
+- Validation for recorded minutes
+
+## Quick start
 
 ```bash
 python -m venv .venv
@@ -14,16 +28,27 @@ uvicorn app:app --reload
 
 Open `http://127.0.0.1:8000`.
 
-## Current MVP
+## Engineering principles
 
-- Local SQLite storage
-- Daily activity logging
-- Today-at-a-glance totals
-- Observation count for historical data
-- Input validation on recorded minutes
+- **Local-first:** personal data stays in the local application database.
+- **Evidence over assumptions:** the app reports observations and correlations rather than claiming causation.
+- **Small primitives first:** reliable logging and validation come before advanced analytics.
 
-## Design principle
+## Quality & maintenance
 
-Life OS reports observations and correlations carefully. It does not pretend that a pattern in personal data proves causation.
+- Dependency updates are managed with Dependabot.
+- CI performs a Python compilation/smoke check on pushes and pull requests.
+- Contributions are documented in `CONTRIBUTING.md`.
+- Security reports should follow `SECURITY.md`.
 
-Future versions: trend charts, target tracking, uncertainty-aware comparisons, weekly review, and export.
+## Roadmap
+
+- [ ] Trend charts
+- [ ] Target tracking
+- [ ] Uncertainty-aware comparisons
+- [ ] Weekly review
+- [ ] Exportable reports
+
+## Scope
+
+This is a personal analytics project, not a medical, financial, or professional decision-making system. Treat its output as observations about recorded data, not as authoritative conclusions.
