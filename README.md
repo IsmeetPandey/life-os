@@ -1,39 +1,29 @@
 # Life OS 🧠
 
-A personal feedback system for turning daily behavior into measurable, reviewable insights.
+A local-first personal feedback system for turning daily behavior into measurable, reviewable observations.
 
-## Product thesis
+## Run locally
 
-Most habit trackers record checkboxes. Life OS is designed to answer a harder question: **which behaviors correlate with better personal outcomes?**
-
-## Planned system
-
-```text
-Daily inputs → validated data → trends → correlations → weekly review
+```bash
+python -m venv .venv
+# Windows: .venv\\Scripts\\activate
+# macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app:app --reload
 ```
 
-### Core metrics
+Open `http://127.0.0.1:8000`.
 
-- Goals and measurable targets
-- Study/work sessions
-- Sleep duration and consistency
-- Exercise / activity
-- Distraction or screen-time data
-- Daily outcome metrics
+## Current MVP
 
-### Design principles
+- Local SQLite storage
+- Daily activity logging
+- Today-at-a-glance totals
+- Observation count for historical data
+- Input validation on recorded minutes
 
-1. Observations are presented as correlations, not medical or scientific causation.
-2. The product favors useful signals over notification spam.
-3. Every metric must earn its place in the interface.
+## Design principle
 
-## Build phases
+Life OS reports observations and correlations carefully. It does not pretend that a pattern in personal data proves causation.
 
-- **Phase 1:** local-first data model + daily logging
-- **Phase 2:** trend dashboard + streak-free consistency metrics
-- **Phase 3:** correlation explorer with uncertainty-aware language
-- **Phase 4:** weekly review and export
-
-## Intended stack
-
-React + FastAPI + SQLite + a charting library.
+Future versions: trend charts, target tracking, uncertainty-aware comparisons, weekly review, and export.
